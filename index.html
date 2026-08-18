@@ -1,0 +1,59 @@
+<!doctype html><html><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#176fe5"><link rel="manifest" href="manifest.json"><title>Class Reminder</title>
+<link rel="stylesheet" href="style.css"></head><body>
+<div id="login" class="login"><div class="login-card">
+<div class="logo">Class <span>Reminder</span></div><p class="muted">ANDC · PSCS · Semester III</p>
+<label>Name / ID</label><input id="loginName" autocomplete="username" placeholder="ARYAN MEHTA">
+<label>Roll No. / Password</label><input id="loginPassword" type="password" autocomplete="current-password" placeholder="250315">
+<button class="primary full" id="loginBtn">Login</button><div id="loginError" class="error hide"></div>
+<p class="hint">First login: enter your exact name and your roll number. Example: ARYAN MEHTA / 250315.</p></div></div>
+
+<div id="app" class="hide">
+<aside class="sidebar"><div class="logo small">Class <span>Reminder</span></div>
+<button data-page="dashboard">🏠 Dashboard</button><button data-page="timetable">📅 Timetable</button>
+<button data-page="reminders">🔔 Reminders</button><button data-page="notes">📚 Notes</button>
+<button data-page="assignments">📝 Assignments</button><button data-page="announcements">📢 Announcements</button>
+<button data-page="profile">👤 Profile</button><button data-page="settings">⚙️ Settings</button>
+<button id="logout" class="logout">↪ Logout</button></aside>
+
+<main><header><div><h1 id="pageTitle">Dashboard</h1><p class="muted">PSCS · Semester III · Class Reminder</p></div>
+<div class="user"><img id="topAvatar" class="avatar mini" alt=""><span id="who"></span></div></header>
+
+<section id="dashboard" class="page active">
+<div class="stats"><div class="card"><small>Semester</small><b>III</b></div><div class="card"><small>Total Classes</small><b id="classCount">0</b></div><div class="card"><small>Notes</small><b id="noteCount">0</b></div><div class="card"><small>Assignments</small><b id="assignmentCount">0</b></div></div>
+<div class="two"><div class="card"><h2>📅 Today's Schedule</h2><div id="today"></div></div>
+<div class="card"><h2>🔔 Notifications</h2><p class="muted">Enable notifications while the PWA is open.</p>
+<button class="primary" id="notifyBtn">Enable Notifications</button><button class="secondary" id="testBtn">Test</button></div></div></section>
+
+<section id="timetable" class="page"><div class="card"><h2>📅 Semester III Timetable</h2><p class="muted">Teacher and room are shown for each class.</p>
+<div class="table-wrap"><table><thead><tr><th>Day</th><th>Time</th><th>Subject</th><th>Teacher</th><th>Room</th></tr></thead><tbody id="tableBody"></tbody></table></div></div></section>
+
+<section id="reminders" class="page"><div class="card"><h2>🔔 Class Reminders</h2><div id="reminderList"></div></div></section>
+
+<section id="notes" class="page"><div class="card"><h2>📚 Notes / Notebook</h2><input id="noteInput" type="file" accept=".pdf,image/*">
+<button class="primary" id="noteBtn">Save Note</button><p class="muted">Notes are stored on this device in this PWA version.</p><div id="notesList"></div></div></section>
+
+<section id="assignments" class="page"><div class="card"><h2>📝 Assignments</h2><div id="assignmentList"></div>
+<button class="primary" id="addAssignment">+ Add Assignment</button></div></section>
+
+<section id="announcements" class="page"><div class="card"><h2>📢 Announcements</h2><div id="announcementList"></div>
+<button class="primary" id="addAnnouncement">+ Add Announcement</button></div></section>
+
+<section id="profile" class="page"><div class="card"><h2>👤 My Profile</h2>
+<div class="profile-head"><img id="profileAvatar" class="avatar bigavatar" alt=""><div><h2 id="profileName"></h2><p class="muted">Roll No.: <span id="profileRoll"></span></p></div></div>
+<label>Change DP</label><input id="avatarInput" type="file" accept="image/*"><button class="primary" id="saveAvatar">Save Profile Photo</button>
+<p class="muted">Your profile photo is saved to this device in this PWA version.</p></div>
+
+<div class="card"><h2>🔐 Change Password</h2>
+<label>Current Password</label><input id="currentPassword" type="password">
+<label>New Password</label><input id="newPassword" type="password">
+<label>Confirm New Password</label><input id="confirmPassword" type="password">
+<button class="primary" id="changePassword">Change Password</button><div id="passwordMessage" class="msg hide"></div>
+<p class="muted">Your initial password is your college roll number. After changing it, use the new password on this device.</p></div></section>
+
+<section id="settings" class="page"><div class="card"><h2>⚙️ Settings</h2><label>Reminder time</label>
+<select id="minutes"><option>10</option><option>15</option><option selected>30</option><option>60</option></select><span class="muted"> minutes before class</span><hr>
+<button class="primary" id="installBtn">Install App</button><p class="muted">iPhone: Safari → Share → Add to Home Screen. Android: Chrome → menu → Install app/Add to Home screen.</p></div></section>
+</main></div>
+<script src="data.js?v=2"></script><script src="app.js?v=2"></script></body></html>

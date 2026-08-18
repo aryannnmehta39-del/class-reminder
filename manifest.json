@@ -1,0 +1,9 @@
+{
+  "name": "Class Reminder",
+  "short_name": "Class Reminder",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f4f7fb",
+  "theme_color": "#176fe5",
+  "description": "PSCS Semester III Class Reminder"
+}
